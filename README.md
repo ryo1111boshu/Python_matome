@@ -136,15 +136,11 @@
     - [arrange()を利用して、連続番号の配列を作る](#arrange%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E9%80%A3%E7%B6%9A%E7%95%AA%E5%8F%B7%E3%81%AE%E9%85%8D%E5%88%97%E3%82%92%E4%BD%9C%E3%82%8B)
     - [linespace()を利用して、等分割した値の配列を作る](#linespace%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E7%AD%89%E5%88%86%E5%89%B2%E3%81%97%E3%81%9F%E5%80%A4%E3%81%AE%E9%85%8D%E5%88%97%E3%82%92%E4%BD%9C%E3%82%8B)
     - [eye()やidentity()を利用して、単位行列を作る](#eye%E3%82%84identity%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E5%8D%98%E4%BD%8D%E8%A1%8C%E5%88%97%E3%82%92%E4%BD%9C%E3%82%8B)
-  - [Pythonではじめる機械学習 ―scikit-learnで学ぶ特徴量エンジニアリングと機械学習の基礎まとめ](#python%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8B%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92-%E2%80%95scikit-learn%E3%81%A7%E5%AD%A6%E3%81%B6%E7%89%B9%E5%BE%B4%E9%87%8F%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%A8%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%81%AE%E5%9F%BA%E7%A4%8E%E3%81%BE%E3%81%A8%E3%82%81)
-    - [sklearnでデータセットを訓練データとテストデータに分割する](#sklearn%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BB%E3%83%83%E3%83%88%E3%82%92%E8%A8%93%E7%B7%B4%E3%83%87%E3%83%BC%E3%82%BF%E3%81%A8%E3%83%86%E3%82%B9%E3%83%88%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AB%E5%88%86%E5%89%B2%E3%81%99%E3%82%8B)
-    - [教師あり学習は分類と回帰に大別できる](#%E6%95%99%E5%B8%AB%E3%81%82%E3%82%8A%E5%AD%A6%E7%BF%92%E3%81%AF%E5%88%86%E9%A1%9E%E3%81%A8%E5%9B%9E%E5%B8%B0%E3%81%AB%E5%A4%A7%E5%88%A5%E3%81%A7%E3%81%8D%E3%82%8B)
-    - [汎化とは](#%E6%B1%8E%E5%8C%96%E3%81%A8%E3%81%AF)
-    - [過剰適合](#%E9%81%8E%E5%89%B0%E9%81%A9%E5%90%88)
-
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-# Python・機械学習まとめ
+# Python学習まとめ
+- 参考
+  - [詳細！Python 3 入門ノート](https://www.amazon.co.jp/dp/B07171GVWK/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1)
 
 ## [詳細！Python 3 入門ノート](https://www.amazon.co.jp/dp/B07171GVWK/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1)まとめ
 
@@ -2097,25 +2093,4 @@ array([9, 9, 8, 8, 7, 7, 6, 6, 5, 5, 4, 4, 3, 3, 2, 2, 1, 1])
 >>> print(E)
 ```
 
-## [Pythonではじめる機械学習 ―scikit-learnで学ぶ特徴量エンジニアリングと機械学習の基礎](https://www.amazon.co.jp/Python%E3%81%A7%E3%81%AF%E3%81%98%E3%82%81%E3%82%8B%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92-%E2%80%95scikit-learn%E3%81%A7%E5%AD%A6%E3%81%B6%E7%89%B9%E5%BE%B4%E9%87%8F%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%8B%E3%82%A2%E3%83%AA%E3%83%B3%E3%82%B0%E3%81%A8%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92%E3%81%AE%E5%9F%BA%E7%A4%8E-Andreas-C-Muller/dp/4873117984)まとめ
 
-### sklearnでデータセットを訓練データとテストデータに分割する
-- train_test_split関数を使う
-- train_test_split関数は分割を行う前にデータセットをシャッフルするので、関数呼び出しのたびに同じ結果が得られるようにrandom_stateパラメータをつける
-- 訓練セット75%、テストセット25%の割合で分割する
-
-```python
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(iris_dataset['data'], iris_dataset['target'], random_state=0)
-```
-
-### 教師あり学習は分類と回帰に大別できる
-- 分類: 与えられた花の画像からあやめの種類を推測するなど。
-- 回帰: 与えられたデータから将来どのようになるかを予測する。
-
-### 汎化とは
-- 教師あり学習では訓練データを用いてモデルを構築する。そのモデルが未見のデータに対しても正確に予測できるものならば、訓練セットがテストセットに対して**汎化**できていると言う。
-
-### 過剰適合
-- 訓練セットからモデルを作る際は出来るだけ適度に単純化するのが望ましいが、過剰に複雑なモデルを作成してしまうこと。
-- 逆に単純化しすぎて訓練セットにもうまく機能しないことを**適合不足**という
